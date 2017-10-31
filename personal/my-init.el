@@ -1,7 +1,12 @@
 (prelude-require-packages '(smooth-scrolling
                             plantuml-mode
                             org-bullets
-                            ))
+                            clojure-snippets))
+
+(require 'seb-utils (concat prelude-personal-dir "/seb-utils"))
+
+;; Need a true insert line above.
+(global-set-key (kbd "C-S-o") 'seb/open-line-above)
 
 ;; Set config `crux-find-user-init-file' to be this `custom.el'
 (setq user-init-file "~/.emacs.d/personal/my-init.el")
@@ -55,6 +60,7 @@
  '((sql . t)
    (gnuplot . t)
    (plantuml . t)
+   (clojure . t)
    ))
 
 ;; Pretty bullets
@@ -67,28 +73,3 @@
 ;; org mode templates
 (add-to-list 'org-structure-template-alist'
              ("dw" "#+BEGIN_SRC sql :exports both :engine postgresql :cmdline \"-U sebm -d dev -h slate#####.com -p 5439\" \n\n#+END_SRC"))
-
-;; Utilities
-(defun seb/halve-other-window-height ()
-  "Expand current window to use half of the other window's lines."
-  (interactive)
-  (enlarge-window (/ (window-height (next-window)) 2)))
-
-;; use 2 spaces for tabs
-(defun seb/die-tabs ()
-  "Remove all tabs and replace with spaces at indent 2"
-  (interactive)
-  (set-variable 'tab-width 2)
-  (mark-whole-buffer)
-  (untabify (region-beginning) (region-end))
-  (keyboard-quit))
-
-;; Insert the date function
-(defun seb/insert-current-date () (interactive)
-       (insert (shell-command-to-string "echo -n $(date +'%a %B %e, %Y')")))
-
-
-(defun seb/close-all-buffers ()
-  "Close all open buffers"
-  (interactive)
-  (mapc 'kill-buffer (buffer-list)))
