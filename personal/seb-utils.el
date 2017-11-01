@@ -1,3 +1,12 @@
+;; is a feature loaded?
+(defun seb/feature? (f)
+  "Test 'features' for existence of 'f'."
+  (interactive "Sfeature: ")
+  (if (find f features)
+      (message "'%s' is a loaded feature."
+               (propertize (symbol-name f) 'face '(:weight bold)))
+    (message "'%s' is not loaded." f)))
+
 ;; Utilities
 (defun seb/halve-other-window-height ()
   "Expand current window to use half of the other window's lines."
