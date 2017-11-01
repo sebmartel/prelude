@@ -5,6 +5,15 @@
 
 (require 'seb-utils (concat prelude-personal-dir "/seb-utils"))
 
+;; Scratch (from wasamasa)
+(setq initial-scratch-message "")          ;; remove scratch default
+                                           ;; message
+(setq initial-major-mode 'emacs-lisp-mode) ;; Scratch should be ing
+                                           ;; elisp mode (because
+                                           ;; emacs puts it in
+                                           ;; fundamental mode by
+                                           ;; default for some reason)
+
 ;; Need a true insert line above.
 (global-set-key (kbd "C-S-o") 'seb/open-line-above)
 
