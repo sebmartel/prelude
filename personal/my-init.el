@@ -22,16 +22,18 @@
   (when (and (not isearch-forward) isearch-other-end)
     (goto-char isearch-other-end)))
 
-;; Need a true insert line above.
+;; I like a true insert line above.
 (global-set-key (kbd "C-S-o") 'seb/open-line-above)
 
 ;; Set config `crux-find-user-init-file' to be this `custom.el'
 (setq user-init-file "~/.emacs.d/personal/my-init.el")
 
-;; Disable C-z (because it is annoying when running the gui
+;; I disable C-z because I fat finger that area quite often and
+;; definitely do not like emacs to be minimized when that happens.
 (global-unset-key "\C-z")
 
-;; I fat finger C-x C-c too often...
+;; I fat finger C-x C-c too often as well. Too bad this doesn't help
+;; when running emacsclient.
 (setq confirm-kill-emacs 'y-or-n-p)
 
 ;; No vertical scroll bar please.
@@ -68,6 +70,10 @@
 (setq plantuml-jar-path
       (expand-file-name "/usr/share/plantuml/plantuml.jar"))
 ;; (setq org-plantuml-jar-path plantuml-jar-path)
+
+;; org-mode clojure
+(setq org-babel-clojure-backend 'cider)
+(require 'cider)
 
 ;; Babel languages
 (org-babel-do-load-languages
