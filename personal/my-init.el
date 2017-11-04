@@ -100,7 +100,7 @@
 (define-key smartparens-mode-map (kbd "M-J") 'sp-join-sexp)
 (define-key smartparens-mode-map (kbd "C-M-t") 'sp-transpose-sexp)
 
-;; hydras
+;; hydra
 
 (defhydra hydra-nav-errors (global-map "M-g")
   "Navigate error buffers easily"
@@ -149,7 +149,7 @@
   ("C-b" sp-previous-sexp)   ;;
 
   ;;
-  ("a" sp-beginning-of-sexp)  
+  ("a" sp-beginning-of-sexp)
   ("e" sp-end-of-sexp)
 
   ;;
