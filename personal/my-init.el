@@ -96,6 +96,9 @@
 (add-to-list 'org-structure-template-alist'
              ("dw" "#+BEGIN_SRC sql :exports both :engine postgresql :cmdline \"-U sebm -d dev -h slate#####.com -p 5439\" \n\n#+END_SRC"))
 
+;; smart-parqens missing bindings
+(define-key smartparens-mode-map (kbd "M-J") 'sp-join-sexp)
+(define-key smartparens-mode-map (kbd "C-M-t") 'sp-transpose-sexp)
 
 ;; hydras
 
