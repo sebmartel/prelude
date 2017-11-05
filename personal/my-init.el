@@ -94,7 +94,9 @@
 
 ;; org mode templates
 (add-to-list 'org-structure-template-alist'
-             ("dw" "#+BEGIN_SRC sql :exports both :engine postgresql :cmdline \"-U sebm -d dev -h slate#####.com -p 5439\" \n\n#+END_SRC"))
+             ("dw" "#+BEGIN_SRC sql :exports both :engine postgresql :cmdline \"-U sebm -d dev -h slate#####.com -p 5439\" \n?\n#+END_SRC"))
+(add-to-list 'org-structure-template-alist'
+             ("clj" "#+BEGIN_SRC clojure\n?\n#+END_SRC"))
 
 ;; smart-parqens missing bindings
 (define-key smartparens-mode-map (kbd "M-J") 'sp-join-sexp)
