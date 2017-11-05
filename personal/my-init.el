@@ -52,6 +52,7 @@
 (global-set-key (kbd "M-P") 'ace-window)
 (require 'ace-window)
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+(ace-window-display-mode t)
 
 ;; Avy use goto-char instead of goto-word-or-subword
 (global-set-key (kbd "C-c j") 'avy-goto-char-2)
